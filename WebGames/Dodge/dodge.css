@@ -18,7 +18,7 @@ h1 {
     position: relative;
     width: 600px;
     height: 700px;
-    margin: 0 auto 50px auto;
+    margin: 0 auto 10px auto;
     background-color: #222;
     border: 2px solid #555;
     overflow: hidden;
@@ -65,6 +65,7 @@ button {
 
 #controls {
     margin-top: 15px;
+    margin-bottom: 50px;
 }
 
 #controls button {
