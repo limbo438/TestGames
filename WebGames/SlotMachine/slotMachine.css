@@ -1,0 +1,57 @@
+﻿#slotMachine {
+    display: flex;
+    justify-content: center;
+    width: 360px;
+    margin: 30px auto;
+    padding: 10px;
+    background-color: #222;
+    border: 3px solid #555;
+}
+
+.reelWindow {
+    position: relative;
+    width: 110px;
+    height: 240px;
+    overflow: hidden;
+    background-color: #111;
+    border: 2px solid #555;
+}
+
+.reel {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.symbol {
+    width: 110px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.reelWindow::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 80px;
+    width: 100%;
+    height: 80px;
+    border-top: 3px solid #ff2222;
+    border-bottom: 3px solid #ff2222;
+    pointer-events: none;
+}
+
+button {
+    padding: 12px 30px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+#message {
+    min-height: 30px;
+    font-size: 22px;
+}

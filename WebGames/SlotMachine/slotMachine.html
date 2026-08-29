@@ -3,7 +3,10 @@
 
 <head>
     <title>Web Games</title>
+
     <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="slotMachine.css">
+
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
 
@@ -17,20 +20,30 @@
 
     <h1>Slotmachine</h1>
 
-    <div>
-        <span id="reel1">❔</span>
-        <span id="reel2">❔</span>
-        <span id="reel3">❔</span>
+    <div id="slotMachine">
+
+        <div class="reelWindow">
+            <div class="reel" id="reel1"></div>
+        </div>
+
+        <div class="reelWindow">
+            <div class="reel" id="reel2"></div>
+        </div>
+
+        <div class="reelWindow">
+            <div class="reel" id="reel3"></div>
+        </div>
+
     </div>
 
     <p>Balance: <span id="balance">100</span></p>
 
-    <button onclick="spin()">SPIN</button>
+    <button id="spinButton">SPIN</button>
+    <button id="restartButton" style="display: none;">RESTART</button>
 
     <p id="message"></p>
 
     <script src="slotMachine.js"></script>
-
 
 </body>
 
