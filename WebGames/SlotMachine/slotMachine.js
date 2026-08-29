@@ -2,17 +2,19 @@
 let bet = 10;
 
 const symbols = ["🍒", "🍋", "🍊", "🍉", "⭐", "7️", "💎"];
-//const symbols = ["🍒", "🍋", "🍊", "🍉", "⭐", "7️"];
 
 const reel1 = document.getElementById("reel1");
 const reel2 = document.getElementById("reel2");
 const reel3 = document.getElementById("reel3");
 
 const balanceText = document.getElementById("balance");
+const betText = document.getElementById("bet");
 const message = document.getElementById("message");
 
 const spinButton = document.getElementById("spinButton");
 const restartButton = document.getElementById("restartButton");
+const minusBetButton = document.getElementById("minusBetButton");
+const plusBetButton = document.getElementById("plusBetButton");
 
 const symbolHeight = 80;
 
@@ -83,6 +85,13 @@ function getCenterSymbol(reel) {
     return null;
 }
 
+function updateBet() {
+    betText.textContent = bet;
+
+    minusBetButton.disabled = bet <= 10;
+    plusBetButton.disabled = bet >= balance;
+}
+
 async function spin() {
     if (spinning)
         return;
@@ -95,9 +104,17 @@ async function spin() {
     }
 
     spinning = true;
+
     balance -= bet;
+
     balanceText.textContent = balance;
+
+    updateBet();
+
     spinButton.disabled = true;
+    minusBetButton.disabled = true;
+    plusBetButton.disabled = true;
+
     message.textContent = "";
 
     const spin1 = spinReel(reel1, 2000);
@@ -125,11 +142,15 @@ async function spin() {
     }
 
     balance += win;
+
     balanceText.textContent = balance;
+
     spinning = false;
     spinButton.disabled = false;
 
-    if (balance < bet) {
+    updateBet();
+
+    if (balance < 10) {
         spinButton.style.display = "none";
         restartButton.style.display = "inline-block";
     }
@@ -137,21 +158,48 @@ async function spin() {
 
 function restart() {
     balance = 100;
+    bet = 10;
+
     balanceText.textContent = balance;
+
     message.textContent = "";
+
     spinButton.style.display = "inline-block";
     restartButton.style.display = "none";
+
     spinButton.disabled = false;
+
     spinning = false;
 
     createReel(reel1);
     createReel(reel2);
     createReel(reel3);
+
+    updateBet();
 }
 
+minusBetButton.addEventListener("click", function () {
+    if (spinning)
+        return;
+
+    bet = Math.max(10, bet - 10);
+    updateBet();
+});
+
+plusBetButton.addEventListener("click", function () {
+    if (spinning)
+        return;
+
+    bet = Math.min(balance, bet + 10);
+    updateBet();
+});
+
 spinButton.addEventListener("click", spin);
+
 restartButton.addEventListener("click", restart);
 
 createReel(reel1);
 createReel(reel2);
 createReel(reel3);
+
+updateBet();
