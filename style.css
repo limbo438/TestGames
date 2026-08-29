@@ -26,7 +26,6 @@ body {
 
 .button {
     display: inline-block;
-    /*background-color: #e00000;*/
     background-color: #555555;
     color: white;
     padding: 12px 25px;
@@ -36,21 +35,10 @@ body {
 }
 
 .button:hover {
-    /*background-color: #ff2222;*/
     background-color: #444444;
     color: #ff2222;
 }
 
-/*.app-image {
-    display: block;
-    width: 500px;
-    max-width: 90%;
-    height: auto;
-    margin: 20px auto;
-}
-.app {
-    margin-bottom: 80px;
-}*/
 .app {
     display: flex;
     align-items: center;
