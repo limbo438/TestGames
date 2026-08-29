@@ -7,12 +7,12 @@ header {
     background-color: black;
     z-index: 1000;
 }
+
 .logo {
     display: block;
     width: 300px;
     margin: 5px auto;
 }
-
 
 body {
     margin: 0;
@@ -22,7 +22,6 @@ body {
     font-family: 'Orbitron', sans-serif;
     padding-top: 100px;
 }
-
 
 .button {
     display: inline-block;
