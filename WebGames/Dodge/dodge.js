@@ -34,6 +34,7 @@ document.addEventListener("keyup", function (event) {
     keys[event.key] = false;
 });
 
+
 leftButton.addEventListener("pointerdown", function () {
     keys["touchLeft"] = true;
 });
@@ -45,6 +46,7 @@ leftButton.addEventListener("pointerup", function () {
 leftButton.addEventListener("pointerleave", function () {
     keys["touchLeft"] = false;
 });
+
 
 rightButton.addEventListener("pointerdown", function () {
     keys["touchRight"] = true;
