@@ -2,4 +2,4 @@
 
 A small collection of games (testing/learning).
 
-https://limbo438.github.io/TestGames/
+https://limbo438.github.io/TestGames
