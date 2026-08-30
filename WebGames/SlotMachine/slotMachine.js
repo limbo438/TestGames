@@ -86,6 +86,8 @@ function getCenterSymbol(reel) {
 }
 
 function updateBet() {
+    if (bet > balance)
+    bet = balance;
     betText.textContent = bet;
 
     minusBetButton.disabled = bet <= 10;
