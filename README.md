@@ -1,5 +1,5 @@
 # Games Test
 
-A small collection of games while testing/learning.
+A small collection of games (testing/learning).
 
 https://limbo438.github.io/TestGames/
